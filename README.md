@@ -83,11 +83,11 @@ A simple way to start an Mosquitto MQTT broker in Docker is the following comman
 docker run --rm --network host --name mosquitto eclipse-mosquitto
 ```
 
-The above command uses the default mosquitto config, which is already contained in the `eclipse-mosquitto` [Docker image](https://hub.docker.com/_/eclipse-mosquitto). A copy of that config can be found under [configs/mosquitto_default.conf](configs/mosquitto_default.conf). Read through this config to get information on all options for customization.
+The above command uses the default Mosquitto config, which is already contained in the `eclipse-mosquitto` [Docker image](https://hub.docker.com/_/eclipse-mosquitto). A copy of that config can be found under [configs/mosquitto_default.conf](configs/mosquitto_default.conf). Read through this config to get information on all options for customization.
 
 ## Using your own Configuration
 
-It is possible to use custom mosquitto configs by using the `-v` flag in the `docker run` command to mount custom configuration files into the Docker container. The following command overwrites the default config, which is part of the `eclipse-mosquitto` Docker image, with the equivalent default config [mosquitto_default.conf](configs/mosquitto_default.conf) from this repository.
+It is possible to use custom Mosquitto configs by using the `-v` flag in the `docker run` command to mount custom configuration files into the Docker container. The following command overwrites the default config, which is part of the `eclipse-mosquitto` Docker image, with the equivalent default config [mosquitto_default.conf](configs/mosquitto_default.conf) from this repository.
 
 ```bash
 # mqtt-broker $
@@ -108,7 +108,7 @@ A more secure way to use an MQTT broker is to require client authentication, i.e
 We tell the broker which users and corresponding passwords are allowed to connect by providing an additional password file `mosquitto.passwd` found in [authentication](authentication). For now, the file is empty, but it can be filled as described below.
 
 ### Creating a Password File
-We can use the tool [`mosquitto_passwd`](https://mosquitto.org/man/mosquitto_passwd-1.html) to manage password files for the mosquitto broker. The tool is available in the `eclipse-mosquitto` Docker image. 
+We can use the tool [`mosquitto_passwd`](https://mosquitto.org/man/mosquitto_passwd-1.html) to manage password files for the Mosquitto broker. The tool is available in the `eclipse-mosquitto` Docker image. 
 
 The password file can either be **appended** with a new user or **overwritten** with a new user, which removes all previously defined users.
 
@@ -154,7 +154,7 @@ To start a broker which uses the password file filled above, we need a new confi
 - `listener 1883`: The broker only listens on port 1883, the default port for unencrypted MQTT messages.
 - (optional) `set_tcp_nodelay true`: It is usually beneficial to use this setting to disable Nagle's algorithm on client sockets of the broker. This has the effect of reducing the latency of individual messages at the potential cost of increasing the number of packets being sent (see [here](https://mosquitto.org/man/mosquitto-conf-5.html)).
 
-### Test Authenticated Communication
+### Testing Authenticated Communication
 
 For a test of the authenticated communication between clients and the broker, in the following, we will create
 1. an example password file ([mosquitto_passwd](https://mosquitto.org/man/mosquitto_passwd-1.html)), 
