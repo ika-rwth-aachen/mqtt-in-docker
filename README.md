@@ -665,4 +665,4 @@ If you are working in the field of robotics, we can recommend to use our softwar
 
 If these instructions helped you, feel free to give our repository a star ⭐. 
 
-We are also happy about raised [issues](https://github.com/ika-rwth-aachen/mqtt-docker/issues), [pull requests](https://github.com/ika-rwth-aachen/mqtt-docker/pulls), and [discussions](https://github.com/ika-rwth-aachen/mqtt-docker/discussions).
+We are also happy about raised [issues](https://github.com/ika-rwth-aachen/mqtt-in-docker/issues), [pull requests](https://github.com/ika-rwth-aachen/mqtt-in-docker/pulls), and [discussions](https://github.com/ika-rwth-aachen/mqtt-in-docker/discussions).
